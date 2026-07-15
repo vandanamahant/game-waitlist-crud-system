@@ -1,26 +1,30 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const path = require('path');
 
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 let waitlist = [];
 
-// Helper function for basic XSS sanitation
+
 const sanitizeInput = (text) => {
     if (typeof text !== 'string') return text;
     return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 };
 
-// 1. POST - Add to Waitlist
 app.post('/waitlist', (req, res) => {
     let { name, game } = req.body;
 
     if (!name || !game || name.trim() === "" || game.trim() === "") {
-        return res.status(400).json({ 
-            success: false, 
-            message: "Validation Error: Name and Game fields are required." 
+        return res.status(400).json({
+            success: false,
+            message: "Validation Error: Name and Game fields are required."
         });
     }
 
@@ -45,7 +49,7 @@ app.post('/waitlist', (req, res) => {
     });
 });
 
-// 2. GET - Fetch All Entries (Handles Empty State)
+
 app.get('/waitlist', (req, res) => {
     if (waitlist.length === 0) {
         return res.status(200).json({
@@ -61,7 +65,7 @@ app.get('/waitlist', (req, res) => {
     });
 });
 
-// 3. PUT - Update Entry using Route Parameter
+
 app.put('/waitlist/:id', (req, res) => {
     const { id } = req.params;
     let { name, game } = req.body;
@@ -94,7 +98,7 @@ app.put('/waitlist/:id', (req, res) => {
     });
 });
 
-// 4. DELETE - Remove Entry using Route Parameter
+
 app.delete('/waitlist/:id', (req, res) => {
     const { id } = req.params;
     const entryIndex = waitlist.findIndex(item => item.id === id);
