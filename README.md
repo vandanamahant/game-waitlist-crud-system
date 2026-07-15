@@ -1,8 +1,8 @@
 # Game Waitlist Portal 🎮
 
-A clean, high-contrast digital waitlist system built to replace manual paper logging and clunky spreadsheets[cite: 1]. It handles real-time player queues securely, with a fully responsive frontend and a solid Express-based backend[cite: 1].
+A clean, high-contrast digital waitlist system built to replace manual paper logging and clunky spreadsheets. It handles real-time player queues securely, with a fully responsive frontend and a solid Express-based backend.
 
-I designed this with a retro-corporate, strictly monochromatic interface (only blacks, whites, and `#f5f5f5` grays) to keep things ultra-clean and distraction-free[cite: 1].
+I designed this with a retro-corporate, strictly monochromatic interface (only blacks, whites, and `#f5f5f5` grays) to keep things ultra-clean and distraction-free.
 
 ---
 
@@ -13,32 +13,32 @@ I designed this with a retro-corporate, strictly monochromatic interface (only b
 ---
 
 ## 🛠️ Tech Behind the Project
-* **Backend:** Node.js & Express.js (REST API architecture)[cite: 1]
-* **Frontend:** Clean Vanilla JavaScript, Semantic HTML5, and Custom CSS (using strict CSS variables)[cite: 1]
-* **Hosting:** Vercel (Deployed as serverless functions)[cite: 1]
+* **Backend:** Node.js & Express.js (REST API architecture)
+* **Frontend:** Clean Vanilla JavaScript, Semantic HTML5, and Custom CSS (using strict CSS variables)
+* **Hosting:** Vercel (Deployed as serverless functions)
 
 ---
 
 ## 🔥 Key Highlights
 
 ### ⚡ Smart Edge Case Handling
-* **Zero-State Message:** If there are no players left in the waitlist, the UI dynamically displays a clear `"No data found"` message instead of just showing an awkward blank screen[cite: 1].
-* **Connection-Friendly UI:** Designed to handle slow 3G networks smoothly with clear visual states during any asynchronous fetch requests[cite: 1].
-* **Strict Validation:** No empty inputs allowed. If you try to submit blank fields, the system blocks the action and immediately highlights the offending text inputs in a high-contrast red border[cite: 1].
+* **Zero-State Message:** If there are no players left in the waitlist, the UI dynamically displays a clear `"No data found"` message instead of just showing an awkward blank screen.
+* **Connection-Friendly UI:** Designed to handle slow 3G networks smoothly with clear visual states during any asynchronous fetch requests.
+* **Strict Validation:** No empty inputs allowed. If you try to submit blank fields, the system blocks the action and immediately highlights the offending text inputs in a high-contrast red border.
 
 ### 🔒 Security & Telemetry
-* **XSS Sanitization:** The server sanitizes every single input before pushing it into the queue array, shielding the backend from malicious HTML/JS injection[cite: 1].
-* **Analytics Logging:** Includes active console telemetry that logs exact tracking messages (`[Analytics] User Interacted with...`) whenever a user is added or removed from the system[cite: 1].
+* **XSS Sanitization:** The server sanitizes every single input before pushing it into the queue array, shielding the backend from malicious HTML/JS injection.
+* **Analytics Logging:** Includes active console telemetry that logs exact tracking messages (`[Analytics] User Interacted with...`) whenever a user is added or removed from the system.
 
 ---
 
 ## 🔌 API Endpoints Reference
 
-This backend speaks standard REST and communicates strictly via JSON payloads[cite: 1]:
+This backend speaks standard REST and communicates strictly via JSON payloads:
 
-* `GET /waitlist` - Pulls the current waitlist queue (returns a list of players or an empty state message)[cite: 1].
-* `POST /waitlist` - Adds a new gamer. Expects JSON: `{ "name": "...", "game": "..." }`[cite: 1].
-* `DELETE /waitlist/:id` - Removes a player instantly using their unique ID as a route parameter[cite: 1].
+* `GET /waitlist` - Pulls the current waitlist queue (returns a list of players or an empty state message).
+* `POST /waitlist` - Adds a new gamer. Expects JSON: `{ "name": "...", "game": "..." }`.
+* `DELETE /waitlist/:id` - Removes a player instantly using their unique ID as a route parameter.
 
 ---
 
