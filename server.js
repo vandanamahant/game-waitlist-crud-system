@@ -40,7 +40,7 @@ app.post('/waitlist', (req, res) => {
 
     waitlist.push(newEntry);
 
-    console.log(`[Analytics] User interacted with Game Waitlist CRUD API with Route Parameters - Added ID: ${newEntry.id}`);
+    console.log('[Analytics] User Interacted with Game waitlist CRUD API with Route Parameters');
 
     return res.status(201).json({
         success: true,
@@ -112,7 +112,7 @@ app.delete('/waitlist/:id', (req, res) => {
 
     const deletedEntry = waitlist.splice(entryIndex, 1);
 
-    console.log(`[Analytics] User interacted with Game Waitlist CRUD API with Route Parameters - Deleted ID: ${id}`);
+    console.log('[Analytics] User Interacted with Game waitlist CRUD API with Route Parameters');
 
     return res.status(200).json({
         success: true,
