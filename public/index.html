@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Waitlist Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>GAME WAITLIST PORTAL</h1>
+        <p>Operational Dashboard — Core Infrastructure Overhaul</p>
+    </header>
+
+    <main>
+        <!-- Form to Add/Update Waitlist -->
+        <section class="form-section">
+            <h2 id="form-title">Add Player to Waitlist</h2>
+            <form id="waitlist-form" novalidate>
+                <input type="hidden" id="player-id">
+                
+                <div class="form-group">
+                    <label for="player-name">Player Name</label>
+                    <input type="text" id="player-name" required placeholder="e.g., Amit Sharma" aria-required="true">
+                    <span class="error-message" id="name-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="game-name">Game Title</label>
+                    <input type="text" id="game-name" required placeholder="e.g., Counter-Strike 2" aria-required="true">
+                    <span class="error-message" id="game-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn" aria-label="Submit Player to Waitlist">Add Player</button>
+                    <button type="button" id="cancel-btn" class="hidden" aria-label="Cancel editing">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Waitlist Display Section -->
+        <section class="list-section">
+            <h2>Current Waitlist Queue</h2>
+            
+            <!-- Visual Loading Indicator -->
+            <div id="loading-indicator" class="hidden" aria-live="polite">
+                <div class="spinner"></div>
+                <p>Loading waitlist database...</p>
+            </div>
+
+            <!-- Table/List Wrapper -->
+            <div id="table-container">
+                <!-- Data will be dynamically rendered here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Ticket ID: ENG-96576 | Secured Terminal</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
