@@ -48,5 +48,5 @@ Want to run this on your local machine? Just follow these simple steps:
 
 1. **Clone this repository:**
    ```bash
-git clone [https://github.com/vandanamahant/game-waitlist-crud-system.git](https://github.com/vandanamahant/game-waitlist-crud-system.git)
-cd game-waitlist-backend
+   git clone https://github.com/vandanamahant/game-waitlist-crud-system.git
+   cd game-waitlist-backend
